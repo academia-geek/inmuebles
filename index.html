@@ -173,7 +173,7 @@
                             </div>
                         </article>
 
-                        <article class="card">
+                        <article class="card mt-3">
                             <div class="card-header">
                                 Datos de inmueble en la mensualidad
                             </div>
@@ -189,14 +189,19 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="tipo_inmueble">Tipo (*)</label>
-                                            <div class="form-check">
-                                                <input type="radio" name="tipo_inmueble" class="form-check-input" value="A"> 
-                                                <label
-                                                    class="form-check-label" for="exampleRadios1">Apartamento</label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input type="radio" name="tipo_inmueble" class="form-check-input" value="C">
-                                                <label class="form-check-label" for="exampleRadios1">Casa</label>
+                                            <div>
+                                                <div class="form-check-inline">
+                                                    <input type="radio" name="tipo_inmueble" class="form-check-input"
+                                                        value="A" checked id="tipo_inmueble_A">
+                                                    <label class="form-check-label"
+                                                        for="tipo_inmueble_A">Apartamento</label>
+                                                </div>
+
+                                                <div class="form-check-inline">
+                                                    <input type="radio" name="tipo_inmueble" class="form-check-input"
+                                                        value="C" id="tipo_inmueble_C">
+                                                    <label class="form-check-label" for="tipo_inmueble_C">Casa</label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

@@ -65,16 +65,28 @@ document.querySelector("#btn-guardar-mensualidad-inmueble").addEventListener("cl
     if(document.querySelector('#frm-mensualidad').reportValidity()){
         let nombre = document.querySelector("#nombre_propietario").value
         let documento = document.querySelector("#doc_propietario").value
+        let metros_cuadrados = document.querySelector("#metros_cuadrados").value
+        let tipo_inmueble = document.querySelector("[name='tipo_inmueble']:checked").value
+
         //let nombres = ["carlos",  "juan",  "manuela"]
         let datosDePropietario = {
             nombre : nombre, 
             documento : documento 
         }
         
-        BD_INMUEBLES.push({
+        let datosInmueble = {
+            metros_cuadrados : metros_cuadrados, 
+            tipo_inmueble : tipo_inmueble, 
+        }
+        
+        let dim = BD_INMUEBLES.push({
             datos_propietario : datosDePropietario, 
-            mensualidades : []
+            mensualidades : [
+                datosInmueble
+            ]
         })
+        
+        alert("Se agrego un nuevo elemento. Dimensión: " + dim)
         
         
         //let nombres = ["oscar", "andrea", "Juan", "david"]
