@@ -91,7 +91,8 @@
                                     <button class="btn btn-info" type="button">
                                         <i class="fas fa-search-plus"></i>
                                     </button>
-                                    <button class="btn btn-primary" type="button" id="btn-adicionar" data-toggle="modal" data-target="#modalMensualidad">
+                                    <button class="btn btn-primary" type="button" id="btn-adicionar" data-toggle="modal"
+                                        data-target="#modalMensualidad">
                                         <i class="fas fa-plus"></i>
                                     </button>
                                 </div>
@@ -134,12 +135,14 @@
         </section>
     </main>
 
-    <section class="modal fade" id="modalMensualidad" tabindex="-1" aria-labelledby="modalMensualidad" aria-hidden="true" role="dialog">
+    <section class="modal fade" id="modalMensualidad" tabindex="-1" aria-labelledby="modalMensualidad"
+        aria-hidden="true" role="dialog">
         <article class="modal-dialog modal-lg">
             <article class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Nueva Mensaulidad</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="modal-body">
                     <form id="frm-mensualidad">
@@ -152,13 +155,49 @@
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="nombre_propietario">Nombre (*)</label>
-                                            <input type="text" id="nombre_propietario" class="form-control" placeholder="Agregar nombre de propietario" required value="Alejandro" maxlength="746"/>
+                                            <input type="text" id="nombre_propietario" class="form-control"
+                                                placeholder="Agregar nombre de propietario" required value="Alejandro"
+                                                maxlength="746" />
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label for="doc_propietario">Documento (*)</label>
-                                            <input type="number" id="doc_propietario" class="form-control" placeholder="Agregar documento de propietario" value="1278987654" required/>
+                                            <input type="number" id="doc_propietario" class="form-control"
+                                                placeholder="Agregar documento de propietario" value="1278987654"
+                                                required />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row"></div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-header">
+                                Datos de inmueble en la mensualidad
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="metros_cuadrados">Metros<sup>2</sup> (*)</label>
+                                            <input type="number" id="metros_cuadrados" class="form-control"
+                                                placeholder="Metros cuadrados de la propiedad" required value="90" />
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label for="tipo_inmueble">Tipo (*)</label>
+                                            <div class="form-check">
+                                                <input type="radio" name="tipo_inmueble" class="form-check-input" value="A"> 
+                                                <label
+                                                    class="form-check-label" for="exampleRadios1">Apartamento</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="radio" name="tipo_inmueble" class="form-check-input" value="C">
+                                                <label class="form-check-label" for="exampleRadios1">Casa</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
