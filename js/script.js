@@ -25,11 +25,35 @@ document.querySelector("#btn-guardar-mensualidad-inmueble").addEventListener("cl
     if(document.querySelector('#frm-mensualidad').reportValidity()){
         let nombre = document.querySelector("#nombre_propietario").value
         let documento = document.querySelector("#doc_propietario").value
-        let nombres = ["oscar", "andrea", "Juan", "david"]
-        nombres.push(nombre)
+        let nombres = ["carlos",  "juan",  "manuela"]
+        //let nombres = ["oscar", "andrea", "Juan", "david"]
+        nombres.push(nombre, "Mario")
         console.log("nombre : ", nombre)
         console.log("documento : ", documento)
-        console.log(nombres)
+        
+        /*let i = 0
+        while(i <= 5){
+            console.log(i, nombres[i])
+            i = i + 1 //i++
+            i = i - 1 //i--
+        } */
+        /*
+        for(let i = 0; i < nombres.length; i++){
+            console.log(i, nombres[i])
+        }
+        */
+       /*
+       for (let i in nombres) {
+            console.log(i, nombres[i])
+       } */
+       /*
+       for (const nom of nombres) {
+           console.log(nom)
+       }
+       */
+      
+      let r = nombres.map( nombre => "Su nombre es " + nombre)
+      console.log("La respuesta es :",r)
     }
 }
 )
