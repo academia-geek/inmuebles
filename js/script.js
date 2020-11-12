@@ -26,6 +26,8 @@ document.querySelector("#btn-guardar-mensualidad-inmueble").addEventListener("cl
         let nombre = document.querySelector("#nombre_propietario").value
         let documento = document.querySelector("#doc_propietario").value
         let nombres = ["carlos",  "juan",  "manuela"]
+        let datosDePropietario = {}
+        console.log(datosDePropietario)
         //let nombres = ["oscar", "andrea", "Juan", "david"]
         nombres.push(nombre, "Mario")
         console.log("nombre : ", nombre)
