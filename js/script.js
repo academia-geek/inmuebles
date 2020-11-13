@@ -65,7 +65,14 @@ let cargarDatosInmueblEnTabla = () => {
     BD_INMUEBLES.forEach( registro => {
         registro.mensualidades.forEach( mensualidadInmueble => {
             console.log(registro.datos_propietario.nombre, mensualidadInmueble)
-            html = html + '<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>'
+            html = html + ` <tr>
+                                <td>${registro.datos_propietario.nombre}</td>
+                                <td></td>
+                                <td>${registro.datos_propietario.genero ===  "M"?"Masculino":"Femenino"}</td>
+                                <td>${registro.datos_propietario.nombre}</td>
+                                <td>${registro.datos_propietario.nombre}</td>
+                                <td><a href="#" class="btn btn-link">Ver</a></td>
+                            </tr>`
         })
     } )
     
