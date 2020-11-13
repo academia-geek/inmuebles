@@ -60,6 +60,17 @@ let guardarMensualidad = event => {
     console.log("Suma = ", sum)
 }
 
+let cargarDatosInmueblEnTabla = () => {
+	let html = ''
+    BD_INMUEBLES.forEach( registro => {
+        registro.mensualidades.forEach( mensualidadInmueble => {
+            console.log(registro.datos_propietario.nombre, mensualidadInmueble)
+            html = html + '<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>'
+        })
+    } )
+    
+    document.querySelector("#tbl-inmubles-mensualidad tbody").innerHTML = html
+}
 
 document.querySelector("#btn-guardar-mensualidad-inmueble").addEventListener("click", e => {
     if(document.querySelector('#frm-mensualidad').reportValidity()){
@@ -79,15 +90,26 @@ document.querySelector("#btn-guardar-mensualidad-inmueble").addEventListener("cl
             tipo_inmueble : tipo_inmueble, 
         }
         
-        let dim = BD_INMUEBLES.push({
-            datos_propietario : datosDePropietario, 
-            mensualidades : [
-                datosInmueble
-            ]
+        let registro_encontrado = BD_INMUEBLES.find( registro => {
+            if(registro.datos_propietario.documento===datosDePropietario.documento) return true
         })
+            
+        if(registro_encontrado === undefined){
+            let dim = BD_INMUEBLES.push({
+                datos_propietario : datosDePropietario, 
+                mensualidades : [
+                    datosInmueble
+                ]
+            }) 
+        }else{
+            registro_encontrado.datos_propietario = datosDePropietario
+            registro_encontrado.mensualidades.push(datosInmueble)
+        }
         
-        alert("Se agrego un nuevo elemento. Dimensión: " + dim)
-        
+        alert("Datos insertados.")
+        document.querySelector('#frm-mensualidad').reset()
+        //$("#modalMensualidad").modal('hide')
+        $("#modalMensualidad").modal('toggle')
         
         //let nombres = ["oscar", "andrea", "Juan", "david"]
        // nombres.push(nombre, "Mario")
@@ -122,3 +144,4 @@ document.querySelector("#btn-guardar-mensualidad-inmueble").addEventListener("cl
 )
 
 	
+cargarDatosInmueblEnTabla()
